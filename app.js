@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-var methodOverride = require("method-override");
+// var methodOverride = require("method-override");
 var expressSession = require("express-session");
 var User = require("./models/userModel.js");
 var flash = require("connect-flash");
@@ -56,7 +56,7 @@ app.use(express.static(__dirname + "/public"));
 
 // use methods for deleting and other things, can use whatever name but docs use _method
 // NOTE MUST PLACE IN app.js BEFORE ROUTES
-app.use(methodOverride("_method"));
+// app.use(methodOverride("_method"));
 
 //use connect-flash for flash messages, need to come BEFORE Passport configuration
 app.use(flash());
@@ -105,7 +105,7 @@ app.use("/", indexRoutes);
 app.use("/todo", todoRoutes);
 
 // Remove todos and users
-var seedDB = require("./seeds.js");
+// var seedDB = require("./seeds.js");
 // seedDB();
 
 
